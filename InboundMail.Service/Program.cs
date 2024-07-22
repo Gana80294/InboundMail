@@ -5,9 +5,9 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InboundMail.Service
+namespace EmamiInboundMail.Service
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -17,7 +17,7 @@ namespace InboundMail.Service
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new InboundMailService()
             };
             ServiceBase.Run(ServicesToRun);
         }

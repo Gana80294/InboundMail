@@ -1,15 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
-namespace InboundMail.Console
+namespace EmamiInboundMail.Console
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            try
+            {
+                var types = Assembly.GetAssembly(typeof(EmamiInboundMail.Service.Program)).GetTypes();
+            }
+            catch (ReflectionTypeLoadException ex)
+            {
+                var loaderExceptions = ex.LoaderExceptions;
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }
